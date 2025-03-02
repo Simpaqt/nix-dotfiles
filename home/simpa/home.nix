@@ -1,0 +1,58 @@
+{ config, pkgs, inputs,  ... }:
+
+{
+
+  # Home Manager needs a bit of information about you and the paths it should manage
+  home.username = "simpa";
+  home.homeDirectory = "/home/simpa";
+
+  imports = [
+    ./modules/hyprland
+    ./modules/hyprland/hyprpanel.nix
+    ./modules/fish
+    ./modules/apps
+    ./modules/nvim
+
+  ];
+
+  # Let Home Manager install and manage itself
+  programs.home-manager.enable = true;
+
+  # Packages to install for your user
+  home.packages = with pkgs; [
+    # Basic tools
+    curl
+    wget
+    git
+    htop
+    
+    # Add more packages as needed
+    # firefox
+    # vscode
+    # neovim
+  ];
+
+  # Manage specific dotfiles and programs
+    # Add other bash configurations here
+
+  # Git configuration example
+  programs.git = {
+    enable = true;
+    userName = "Simpaqt";
+    userEmail = "simpa@protonmail.com";
+    # Add other git configurations here
+  };
+
+  # Other program configurations can be added similarly
+  # programs.vscode.enable = true;
+  # programs.neovim.enable = true;
+
+  # Manage your dotfiles
+  # home.file.".config/some-program/config".source = ./dotfiles/some-program/config;
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  home.stateVersion = "25.05"; # Change to match your NixOS version
+}
