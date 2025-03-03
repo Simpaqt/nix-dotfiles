@@ -37,17 +37,17 @@
   ];
 
   # Manage specific dotfiles and programs
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -la";
-      update = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
-      vi = "nvim";
-      vim = "nvim";
-      # Add other aliases as needed
-    };
-    # Add other bash configurations here
-  };
+  # programs.bash = {
+  #   enable = true;
+  #   shellAliases = {
+  #     ll = "ls -la";
+  #     update = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
+  #     vi = "nvim";
+  #     vim = "nvim";
+  #     # Add other aliases as needed
+  #   };
+  #   # Add other bash configurations here
+  # };
 
   # Git configuration example
   programs.git = {
