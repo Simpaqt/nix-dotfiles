@@ -41,7 +41,7 @@
       bind = $mod, E, exec, dolphin
       bind = $mod, T, togglefloating
       bind = $mod, A, exec, wofi --show drun
-      bind = $mod, P, pseudo
+      # bind = $mod, P, pseudo
       bind = ALT, Return, fullscreen
       bind = $mod, R, togglesplit
 
@@ -80,6 +80,11 @@
       bindm = $mod, mouse:272, movewindow
       bindm = $mod, mouse:273, resizewindow
 
+      # printscreen
+
+      bind = $mod, P, exec, grim -g "$(slurp)" - | wl-copy
+      bind = $mod+Shift, P, exec, grim -g "$(slurp)" - | swappy -f -
+
     '';
   };
 
@@ -88,6 +93,7 @@
   programs.wofi.enable = true;
 
   home.packages = with pkgs; [
+    slurp
     swww
     grim
     wireplumber

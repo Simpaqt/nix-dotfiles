@@ -15,19 +15,16 @@
     enable = true;
 
     # Use Home Manager's aliases system which should translate correctly to Fish
-    shellAbbrs = {
-      vi = "nvim";
-      vim = "nvim";
-      update = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
-    };
     
     shellInit = ''
       # Remove greeting
       set -g fish_greeting
       
-      # Add paths
-      fish_add_path $HOME/.nix-profile/bin
-      set -gx PATH /run/current-system/sw/bin $PATH
+      # DO NOT set PATH manually
+      # Instead, ensure fish uses the NIX-provided PATH
+      if test -e /etc/profile
+        set -gx NIX_PROFILES $NIX_PROFILES
+      end
     '';
     
     interactiveShellInit = ''

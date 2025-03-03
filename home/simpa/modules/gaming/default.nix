@@ -1,7 +1,6 @@
-{ pkgs, lib, pkgs, ... }:
+{ pkgs, lib, ... }:
 {
 
-  programs.steam.enable = true;
   home.packages = with pkgs; [
     lutris
     gamemode

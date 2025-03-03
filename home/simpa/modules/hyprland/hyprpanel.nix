@@ -15,7 +15,7 @@
     # Useful when updating your config so that you
     # don't need to manually restart it.
     # Default: false
-    #systemd.enable = true;
+    systemd.enable = true;
 
     # Add '/nix/store/.../hyprpanel' to your
     # Hyprland config 'exec-once'.
@@ -34,9 +34,9 @@
     # Override the final config with an arbitrary set.
     # Useful for overriding colors in your selected theme.
     # Default: {}
-    override = {
-      theme.bar.menus.text = "#123ABC";
-    };
+    # override = {
+    #   theme.bar.menus.text = "#123ABC";
+    # };
 
     # Configure bar layouts for monitors.
     # See 'https://hyprpanel.com/configuration/panel.html'.

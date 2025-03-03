@@ -83,6 +83,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.fish.enable = true;
   programs.steam.enable = true;
   programs.hyprland = {
     enable = true;

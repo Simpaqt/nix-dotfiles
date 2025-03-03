@@ -12,7 +12,7 @@
     ./modules/fish
     ./modules/apps
     ./modules/nvim
-    # ./modules/gaming
+    ./modules/gaming
 
   ];
 
