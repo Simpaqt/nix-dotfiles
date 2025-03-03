@@ -12,6 +12,7 @@
     ./modules/fish
     ./modules/apps
     ./modules/nvim
+    # ./modules/gaming
 
   ];
 
@@ -25,6 +26,9 @@
     wget
     git
     htop
+    lazygit
+    github-cli
+    gh-dash
     
     # Add more packages as needed
     # firefox
@@ -33,7 +37,17 @@
   ];
 
   # Manage specific dotfiles and programs
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -la";
+      update = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
+      vi = "nvim";
+      vim = "nvim";
+      # Add other aliases as needed
+    };
     # Add other bash configurations here
+  };
 
   # Git configuration example
   programs.git = {

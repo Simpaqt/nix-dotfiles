@@ -29,7 +29,7 @@
 
     # Import a theme from './themes/*.json'.
     # Default: ""
-    theme = "gruvbox_split";
+    theme = "tokyo_night";
 
     # Override the final config with an arbitrary set.
     # Useful for overriding colors in your selected theme.

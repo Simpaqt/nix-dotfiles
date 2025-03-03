@@ -1,6 +1,16 @@
 # modules/fish/default.nix
 { config, pkgs, lib, ... }:
 {
+ 
+  home.packages = with pkgs; [
+    fish
+    bat           # For syntax highlighting
+    fzf           # For fuzzy finding
+    fd            # For file finding
+    eza
+
+  ];
+   
   programs.fish = {
     enable = true;
 
@@ -17,7 +27,7 @@
       
       # Add paths
       fish_add_path $HOME/.nix-profile/bin
-      fish_add_path /run/current-system/sw/bin
+      set -gx PATH /run/current-system/sw/bin $PATH
     '';
     
     interactiveShellInit = ''
@@ -38,12 +48,6 @@
   };
   
   # Install additional packages that might be needed for Fish functionality
-  home.packages = with pkgs; [
-    bat           # For syntax highlighting
-    fzf           # For fuzzy finding
-    fd            # For file finding
-    eza
-  ];
   
   programs.starship = {
     enable = true;

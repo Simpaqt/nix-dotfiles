@@ -24,14 +24,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos/configuration.nix
-
-      {
-        nixpkgs.overlays = [
-          (final: prev: {
-            hyprpanel = inputs.hyprpanel.packages.${final.system}.default;
-          })
-        ];
-      }
+        { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
 
         home-manager.nixosModules.home-manager
 
