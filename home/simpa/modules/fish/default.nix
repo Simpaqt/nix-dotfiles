@@ -9,7 +9,7 @@
     eza
   ];
    
-  stylix.targets.fish.enable = false;
+  stylix.targets.fish.enable = true;
   programs.fish = {
     enable = true;
 
