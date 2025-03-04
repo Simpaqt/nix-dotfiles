@@ -15,8 +15,8 @@
         gaps_out = 10;
 
         border_size = 2;
-        "col.active_border" = "rgba(33ccffee)";
-        "col.inactive_border" = "rgba(595959aa)";
+        # "col.active_border" = "rgba(33ccffee)";
+        # "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -126,27 +126,34 @@
       bind = $mod+Shift, 9, movetoworkspace, 9
       bind = $mod+Shift, 0, movetoworkspace, 10
 
+      # Special workspace
+      bind = $mod+Shift, S, movetoworkspacesilent, special
+      bind = $mod, S, togglespecialworkspace,
+
       # Reize and move windows
       bindm = $mod, mouse:272, movewindow
       bindm = $mod, mouse:273, resizewindow
 
       # printscreen
 
-      bind = $mod, P, exec, grim -g "$(slurp)" - | wl-copy
-      bind = $mod+Shift, P, exec, grim -g "$(slurp)" - | swappy -f -
+      bind = $mod, P, exec, grimblast copysave area
+      bind = $mod+Shift, P, exec, grimblast copysave output
 
     '';
   };
 
   # Programs that work well with Hyprland
+  stylix.targets.ghostty.enable = false;
   programs.waybar.enable = true;
   programs.wofi.enable = true;
 
   home.packages = with pkgs; [
-    slurp
     feh
+    jq
+    grimblast
+    slurp
+    swappy
     swww
-    grim
     wireplumber
     libgtop
     bluez

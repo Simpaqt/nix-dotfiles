@@ -14,6 +14,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
+  home-manager.backupFileExtension = "backup";
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -73,6 +74,27 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.fish.enable = true;
 
+  stylix = {
+    enable = true;
+    base16Scheme = {
+	base00 = "#24283B";
+	base01 = "#16161E";
+	base02 = "#343A52";
+	base03 = "#444B6A";
+	base04 = "#787C99";
+	base05 = "#A9B1D6";
+	base06 = "#CBCCD1";
+	base07 = "#D5D6DB";
+	base08 = "#C0CAF5";
+	base09 = "#A9B1D6";
+	base0A = "#0DB9D7";
+	base0B = "#9ECE6A";
+	base0C = "#B4F9F8";
+	base0D = "#2AC3DE";
+	base0E = "#BB9AF7";
+	base0F = "#F7768E";
+    };
+  };
   environment.shells = with pkgs; [ fish bash ];
 
   users.users.simpa = {
@@ -93,7 +115,6 @@
     enable = true;
     xwayland.enable = true;
   };
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
