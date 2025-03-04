@@ -71,7 +71,12 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.fish.enable = true;
+
+  environment.shells = with pkgs; [ fish bash ];
+
   users.users.simpa = {
+    shell = pkgs.fish;
     isNormalUser = true;
     description = "simpa";
     extraGroups = [ "networkmanager" "wheel" ];

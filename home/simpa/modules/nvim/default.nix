@@ -8,6 +8,10 @@
  };
 
  home.packages = with pkgs; [
-   gcc
+    rustup
+    go
+    nodejs
+    deno
+    gcc
  ];
 }
