@@ -13,8 +13,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
+
     superfile.url = "github:yorukot/superfile";
     stylix.url = "github:danth/stylix";
   };
@@ -29,7 +31,6 @@
         { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
 
         home-manager.nixosModules.home-manager
-
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -37,13 +38,11 @@
             extraSpecialArgs = { inherit inputs; };
             users.simpa = { ... }: {
               imports = [
-              ./home/simpa/home.nix
-              nvf.homeManagerModules.default
+                ./home/simpa/home.nix
+                nvf.homeManagerModules.default
               ];
               # Override the home directory explicitly with mkForce
               home.homeDirectory = nixpkgs.lib.mkForce "/home/simpa";
-
-              # home-manager.backupFileExtension = "backup";
             };
           };
         }

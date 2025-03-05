@@ -5,5 +5,6 @@
     vesktop
     spotify
     protonup-qt
+    google-chrome
   ];
 }

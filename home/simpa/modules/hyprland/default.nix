@@ -8,7 +8,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-    "$mod" = "SUPER";
+      "$mod" = "SUPER";
+      "$browser" = "google-chrome-stable";
       # Example configuration
       general = {
         gaps_in = 5;
@@ -90,6 +91,7 @@
       bind = $mod, M, exit
       bind = $mod, E, exec, dolphin
       bind = $mod, T, togglefloating
+      bind = $mod, F, exec, $browser
       bind = $mod, A, exec, wofi --show drun
       # bind = $mod, P, pseudo
       bind = ALT, Return, fullscreen
