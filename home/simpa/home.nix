@@ -54,7 +54,7 @@
   programs.git = {
     enable = true;
     userName = "Simpaqt";
-    userEmail = "simpa@protonmail.com";
+    userEmail = "simpaqt@yahoo.com";
     # Add other git configurations here
   };
 

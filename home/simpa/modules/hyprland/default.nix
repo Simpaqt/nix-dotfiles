@@ -9,7 +9,7 @@
     enable = true;
     settings = {
       "$mod" = "SUPER";
-      "$browser" = "google-chrome-stable";
+      "$browser" = "vivaldi";
       # Example configuration
       general = {
         gaps_in = 5;

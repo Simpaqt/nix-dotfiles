@@ -9,6 +9,8 @@
     eza
     fastfetch
     onefetch
+    himalaya
+    pass
   ];
    
   stylix.targets.fish.enable = false;

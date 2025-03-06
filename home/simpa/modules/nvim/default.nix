@@ -12,7 +12,7 @@
     rustup
     go
     nodejs
-    deno
     gcc
+    deno
  ];
 }
