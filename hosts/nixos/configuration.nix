@@ -102,7 +102,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "simpa";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
    # packages = with pkgs; [
     #  kdePackages.kate
     #  thunderbird
@@ -111,6 +111,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.gamemode.enable = true;
   programs.steam.enable = true;
   programs.hyprland = {
     enable = true;

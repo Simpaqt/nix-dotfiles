@@ -10,7 +10,7 @@
     fastfetch
     onefetch
     himalaya
-    pass
+    epy
   ];
    
   stylix.targets.fish.enable = false;

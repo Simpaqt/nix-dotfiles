@@ -3,9 +3,9 @@
 
   home.packages = with pkgs; [
     lutris
-    gamemode
     wine
     protonup-qt
+    power-profiles-daemon
     wowup-cf
     prismlauncher
     smassh
