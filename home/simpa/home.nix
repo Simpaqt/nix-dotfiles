@@ -8,7 +8,7 @@
 
   imports = [
     ./modules/hyprland
-    ./modules/hyprland/hyprpanel.nix
+    # ./modules/hyprland/hyprpanel.nix
     ./modules/fish
     ./modules/apps
     ./modules/nvim

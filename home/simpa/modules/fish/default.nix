@@ -6,10 +6,14 @@
     bat           # For syntax highlighting
     fzf           # For fuzzy finding
     fd            # For file finding
+    openssl
+    pkg-config
     eza
+    yt-dlp
     fastfetch
     onefetch
     himalaya
+    unzip
     epy
   ];
    
@@ -46,6 +50,7 @@
        alias str="sudo mount /dev/sdb3 /Storage"
        alias str2="sudo mount /dev/sdb4 /Storage2"
        alias gmg="sudo mount /dev/nvme0n1p1 /Gaming"
+       alias todo="cargo run --manifest-path ~/Coding/Rust/todo-list/Cargo.toml"
 
        #nix alias
        alias rebuild="sudo nixos-rebuild switch --flake ~/nixos#nixos"

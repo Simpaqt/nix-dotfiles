@@ -5,9 +5,9 @@
     lutris
     wine
     protonup-qt
-    power-profiles-daemon
     wowup-cf
     prismlauncher
     smassh
+    gamemode
   ];
 }

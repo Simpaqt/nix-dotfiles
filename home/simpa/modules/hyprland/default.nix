@@ -86,6 +86,9 @@
 
     # You can also use extraConfig for more complex configurations
     extraConfig = ''
+      # Monitor
+      monitor = DP-2, 1920x1080@144, 0x0, 1
+      monitor = HDMI-A-1, 1920x1080@60.000, 1920x0, 1
       # Keybindings
       bind = $mod, Return, exec, ghostty
       bind = $mod, Q, killactive
@@ -160,7 +163,7 @@
     wireplumber
     libgtop
     bluez
-    hyprpanel
+    # hyprpanel
     networkmanager
     dart-sass
     wl-clipboard
@@ -168,7 +171,7 @@
     gvfs
     hyprpicker
     btop
-    inputs.superfile.packages.${system}.default
+    # inputs.superfile.packages.${system}.default
 
   ];
 

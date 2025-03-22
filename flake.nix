@@ -14,21 +14,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
 
-    superfile.url = "github:yorukot/superfile";
+    # superfile.url = "github:yorukot/superfile";
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nvf, hyprpanel, stylix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, nvf, stylix, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos/configuration.nix
         stylix.nixosModules.stylix
-        { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
+        # { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
 
         home-manager.nixosModules.home-manager
         {

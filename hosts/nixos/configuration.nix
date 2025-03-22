@@ -24,6 +24,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  powerManagement.cpuFreqGovernor = "performance";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -37,10 +38,8 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   services.flatpak.enable = true;
 
   # Configure keymap in X11
@@ -53,7 +52,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -111,7 +110,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-  programs.gamemode.enable = true;
   programs.steam.enable = true;
   programs.hyprland = {
     enable = true;

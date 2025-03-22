@@ -8,6 +8,7 @@
     spotify
     protonup-qt
     google-chrome
+    figma-linux
     vivaldi
   ];
 }
