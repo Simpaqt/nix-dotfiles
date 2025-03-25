@@ -9,11 +9,14 @@
     openssl
     pkg-config
     eza
+    rustlings
     yt-dlp
     fastfetch
+    pandoc
+    p11-kit
     onefetch
-    himalaya
     unzip
+    aerc
     epy
   ];
    
@@ -25,6 +28,8 @@
      shellInit = ''
        # Remove greeting
        set -g fish_greeting
+       set -gx EDITOR nvim
+
 
        #abbreviations
        

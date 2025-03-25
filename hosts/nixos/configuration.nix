@@ -41,6 +41,32 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.flatpak.enable = true;
+  security.pki.certificates = [
+    ''
+-----BEGIN CERTIFICATE-----
+MIIDkjCCAnqgAwIBAgIQJZEdRNt2A+E9MchGHJqXdTANBgkqhkiG9w0BAQsFADBL
+MQswCQYDVQQGEwJDSDESMBAGA1UEChMJUHJvdG9uIEFHMRQwEgYDVQQLEwtQcm90
+b24gTWFpbDESMBAGA1UEAxMJMTI3LjAuMC4xMB4XDTI1MDMyNTE2MzcwMloXDTQ1
+MDMyMDE2MzcwMlowSzELMAkGA1UEBhMCQ0gxEjAQBgNVBAoTCVByb3RvbiBBRzEU
+MBIGA1UECxMLUHJvdG9uIE1haWwxEjAQBgNVBAMTCTEyNy4wLjAuMTCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAKkjMhfGYTCNd9LfPQinfB3nfZpNDy9P
+uLQjBu4rNuajJETOGaZWXra1wcSfar4iZFfmCJ6lP1ex6snNssQwUfqlmbTifiCO
+9a9rueFME3qVQAEuhZKBY2zik23H5Of4XBb9cqq0zt8/xcIVWTe1SQFw7CkOLVdY
+L5dx6K6rmqetcbFWSi6hMZIpGADpgOdQ4Xzmnzjg+vKed8aemf9ldl6Vxu8eI2n/
+q76g7TrGuhtLc6NK4Wkq86KuYYqMI2XTU8390eEJ6ReZFWFLLO56oTgIVAPlfeWx
+QjptkLdJ7Cs7lIIU9oiCrneT9NwlfezqymB00uGdS+KW+ftOvh0oW0UCAwEAAaNy
+MHAwDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD
+AjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQUycOheubo2VV7r/sOyq7WOsnt
+fDAPBgNVHREECDAGhwR/AAABMA0GCSqGSIb3DQEBCwUAA4IBAQAT8GUtssKP07es
+gv2MbNcxB8S0HFqsvsW48M7D67HX81Od+eOD6mB5NUMnLISBPF9ng51RAUGTWlTS
+X5r9NmLnnMn39XG5L7wj8YFP3U99am5IBjXLqwZd3WZRKPwOlQhUuEpTac6KjHkq
+6RO8UQGeEff26dXK6Idmbu1PjgiUq5xE9OPtKl0ezcMG425BSRE43Hr36gsynnJK
+hfA2weLsSC2gz8j6MLZ07O84XtgZ5JGYHD8/UaACFpc/0ulIdvR2XAbY8WhxqrjO
+1m4EE2V+c0/Y54nAsju/Rl3uEAv1Z/t6sT9GJMbDlWDVMyC13OpFBVGgFh4E9UBf
+DnFgsQmK
+-----END CERTIFICATE-----
+    ''
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -123,7 +149,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+   #wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
