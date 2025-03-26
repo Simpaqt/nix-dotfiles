@@ -7,6 +7,14 @@
     enable = true;
     defaultEditor = true;
  };
+ # programs.nixvim = {
+ #    enable = true;
+ #    defaultEditor = true;
+ #    colorschemes.tokyonight.enable = true;
+ #    plugins.lualine.enable = true;
+ #    plugins.mini.enable = true;
+ #
+ #  };
 
  home.packages = with pkgs; [
     rustup
@@ -16,4 +24,4 @@
     gcc
     deno
  ];
-}
+} 

@@ -4,8 +4,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
-    nvf = {
-      url = "github:notashelf/nvf";
+    # nvf = {
+    #   url = "github:notashelf/nvf";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -21,7 +25,7 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nvf, stylix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, nixvim, stylix, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -39,7 +43,7 @@
             users.simpa = { ... }: {
               imports = [
                 ./home/simpa/home.nix
-                nvf.homeManagerModules.default
+                nixvim.homeManagerModules.default
               ];
               # Override the home directory explicitly with mkForce
               home.homeDirectory = nixpkgs.lib.mkForce "/home/simpa";
