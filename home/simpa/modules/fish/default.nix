@@ -13,6 +13,8 @@
     yt-dlp
     fastfetch
     pandoc
+    protonmail-bridge
+    protonmail-bridge-gui
     p11-kit
     onefetch
     unzip
