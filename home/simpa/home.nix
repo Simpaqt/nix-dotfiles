@@ -15,6 +15,7 @@
     ./modules/gaming
     ./modules/sway
     ./modules/waybar
+    ./modules/tmux
   ];
 
   # Let Home Manager install and manage itself
