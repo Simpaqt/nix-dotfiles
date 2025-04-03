@@ -11,6 +11,11 @@
         names = ["JetBrains Mono"];
         size = lib.mkForce 11.0;
       };
+      seat = {
+        "*" = {
+          xcursor_theme = "Adwaita 24";
+        };
+      };
       bars = [{
         command = "waybar";
       }];
@@ -115,6 +120,7 @@
       font pango:JetBrains Mono 11
       
       # You can add more custom configuration here
+      seat * xcursor_theme Adwaita 24
     '';
   };
   
@@ -129,5 +135,22 @@
     slurp
     jq
     jetbrains-mono # Add JetBrains Mono font
+    adwaita-icon-theme
   ];
+
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "Adwaita";
+      size = 24;
+    };
+  };
+
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
 }
