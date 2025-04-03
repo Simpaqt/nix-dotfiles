@@ -24,6 +24,9 @@
   programs.ghostty = {
     enable = true;
   };
+  programs.waybar = {
+    enable = true;
+  };
 
   # Packages to install for your user
   home.packages = with pkgs; [
