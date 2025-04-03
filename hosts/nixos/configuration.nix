@@ -135,7 +135,10 @@ vlHMqRh7
   };
 
   security.polkit.enable = true;
-
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true; # So that GTK applications run with proper themes
+  };
   # Install firefox.
   programs.firefox.enable = true;
   programs.steam.enable = true;

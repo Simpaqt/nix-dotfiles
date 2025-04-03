@@ -13,6 +13,7 @@
     ./modules/apps
     ./modules/nvim
     ./modules/gaming
+    ./modules/sway
   ];
 
   # Let Home Manager install and manage itself
