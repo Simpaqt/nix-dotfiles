@@ -25,6 +25,11 @@
   programs.ghostty = {
     enable = true;
   };
+
+  programs.obs-studio = {
+    enable = true;
+    # Add any additional configuration options here
+  };
   # Packages to install for your user
   home.packages = with pkgs; [
     # Basic tools

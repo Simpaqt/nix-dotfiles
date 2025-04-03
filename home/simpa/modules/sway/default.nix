@@ -86,9 +86,9 @@
         "${modifier}+v" = "splitv";
         "${modifier}+s" = "layout stacking";
         "${modifier}+w" = "layout tabbed";
-        "${modifier}+t" = "layout toggle split";
+        "${modifier}+x" = "layout toggle split";
         "Alt+Return" = "fullscreen";
-        "${modifier}+space" = "floating toggle";
+        "${modifier}+t" = "floating toggle";
         
         # Screenshot keybindings
   # Screenshot of selected area directly to clipboard
