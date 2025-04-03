@@ -103,7 +103,7 @@
     
     extraConfig = ''
       # Set wallpaper
-      output * bg ${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src} fill
+      output * bg ${~/Downloads/fox.png} fill
       
       # Font for window titles (if titlebars are enabled)
       font pango:JetBrains Mono 11
