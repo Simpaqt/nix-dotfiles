@@ -4,6 +4,7 @@
 {
   programs.tmux = {
     enable = true;
+    prefix = "C-a";
     extraConfig = ''
       bind-key "T" run-shell "sesh connect \"$(
       sesh list --icons | fzf-tmux -p 80%,70% \
