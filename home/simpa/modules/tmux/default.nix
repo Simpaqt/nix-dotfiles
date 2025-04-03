@@ -4,17 +4,30 @@
 {
   programs.tmux = {
     enable = true;
-    plugins = with pkgs; [
-      tmuxPluginManager
-      tmuxPluginFzf
-      tmuxPluginFzfVim
-      tmuxPluginFzfShell
-      tmuxPluginFzfShellVim
-    ];
-    config = ''
-      set -g default-terminal "screen-256color"
-      set -g mouse on
-      set -g history-limit 10000
+    extraConfig = ''
+      bind-key "T" run-shell "sesh connect \"$(
+      sesh list --icons | fzf-tmux -p 80%,70% \
+      --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+      --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+      --bind 'tab:down,btab:up' \
+      --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list --icons)' \
+      --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t --icons)' \
+      --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c --icons)' \
+      --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z --icons)' \
+      --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+      --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+      --preview-window 'right:55%' \
+      --preview 'sesh preview {}'
+      )\""
     '';
+  };
+
+  programs.sesh = {
+    enable = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    tmux.enableShellIntegration = true;
   };
 }
