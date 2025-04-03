@@ -149,12 +149,12 @@
         interval = 1;
       };
       
-      "network" = {
-        format-wifi = " {essid}";
-        format-ethernet = " {ifname}: {ipaddr}";
-        format-disconnected = "⚠ Disconnected";
-        tooltip = false;
-      };
+      # "network" = {
+      #   format-wifi = " {essid}";
+      #   format-ethernet = " {ifname}: {ipaddr}";
+      #   format-disconnected = "⚠ Disconnected";
+      #   tooltip = false;
+      # };
       
       "pulseaudio" = {
         format = "{icon} {volume}%";

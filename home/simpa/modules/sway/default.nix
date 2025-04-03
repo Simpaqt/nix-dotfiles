@@ -85,9 +85,15 @@
         "Alt+Return" = "fullscreen";
         "${modifier}+space" = "floating toggle";
         
-        # Screenshot
-        "${modifier}+p" = "exec grimblast copysave area";
-        "${modifier}+Shift+p" = "exec grimblast copysave output";
+        # Screenshot keybindings
+  # Screenshot of selected area directly to clipboard
+        "${modifier}+p" = "exec slurp | grim -g - - | wl-copy";
+        
+        # Full screen screenshot directly to clipboard
+        "${modifier}+Shift+p" = "exec grim - | wl-copy";
+        
+        # Save screenshot of selected area to file (as a bonus option)
+        "${modifier}+Ctrl+p" = "exec slurp | grim -g - ~/Pictures/screenshots/$(date +'%Y-%m-%d-%H%M%S').png";
       };
       
       gaps = {
@@ -103,7 +109,7 @@
     
     extraConfig = ''
       # Set wallpaper
-      output * bg ${../../../assets/wallpapers/fox.png} fill
+      output * bg ${../../../../assets/wallpapers/forest.png} fill
       
       # Font for window titles (if titlebars are enabled)
       font pango:JetBrains Mono 11
@@ -122,7 +128,6 @@
     grim
     slurp
     jq
-    grimblast
     jetbrains-mono # Add JetBrains Mono font
   ];
 }
