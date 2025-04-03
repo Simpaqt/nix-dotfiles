@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./sway-session.nix
     ];
 
   # Bootloader.
@@ -137,7 +138,22 @@ vlHMqRh7
   security.polkit.enable = true;
   programs.sway = {
     enable = true;
-    wrapperFeatures.gtk = true; # So that GTK applications run with proper themes
+    wrapperFeatures = {
+      gtk = true; # So that GTK applications run with proper themes
+      base = true; # Needed for GDM to find the session
+    };
+    extraPackages = with pkgs; [
+      swayidle
+      swaylock
+      xwayland # For X11 application support
+    ];
+  };
+
+# Make sure XDG portal works with Sway
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
   # Install firefox.
   programs.firefox.enable = true;
