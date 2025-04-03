@@ -9,7 +9,7 @@
       menu = "wofi --show drun";
       fonts = {
         names = ["JetBrains Mono"];
-        size = 11.0;
+        size = lib.mkForce 11.0;
       };
       bars = [{
         command = "waybar";
