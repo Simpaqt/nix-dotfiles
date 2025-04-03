@@ -7,18 +7,22 @@
   home.homeDirectory = "/home/simpa";
 
   imports = [
-    ./modules/hyprland
+    # ./modules/hyprland
     # ./modules/hyprland/hyprpanel.nix
     ./modules/fish
     ./modules/apps
     ./modules/nvim
     ./modules/gaming
-
   ];
 
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
   programs.fish.enable = true;
+
+  stylix.targets.ghostty.enable = false;
+  programs.ghostty = {
+    enable = true;
+  };
 
   # Packages to install for your user
   home.packages = with pkgs; [
@@ -30,7 +34,22 @@
     lazygit
     github-cli
     gh-dash
-    
+    feh
+    jq
+    grimblast
+    slurp
+    swappy
+    swww
+    wireplumber
+    libgtop
+    bluez
+    # hyprpanel
+    networkmanager
+    dart-sass
+    wl-clipboard
+    upower
+    gvfs
+    btop
     # Add more packages as needed
     # firefox
     # vscode

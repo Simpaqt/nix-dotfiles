@@ -134,14 +134,15 @@ vlHMqRh7
    # ];
   };
 
+  security.polkit.enable = true;
+
   # Install firefox.
   programs.firefox.enable = true;
   programs.steam.enable = true;
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  # };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

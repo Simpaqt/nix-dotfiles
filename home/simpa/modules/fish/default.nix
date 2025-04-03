@@ -14,6 +14,7 @@
     fastfetch
     pandoc
     protonmail-bridge
+    manga-tui
     protonmail-bridge-gui
     p11-kit
     onefetch
