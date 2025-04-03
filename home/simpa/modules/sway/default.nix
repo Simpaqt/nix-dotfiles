@@ -7,6 +7,10 @@
       modifier = "Mod4"; # Super key
       terminal = "ghostty";
       menu = "wofi --show drun";
+      fonts = {
+        names = ["JetBrains Mono"];
+        size = 11.0;
+      };
       bars = [{
         command = "waybar";
       }];
@@ -101,6 +105,9 @@
       # Set wallpaper
       output * bg ${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src} fill
       
+      # Font for window titles (if titlebars are enabled)
+      font pango:JetBrains Mono 11
+      
       # You can add more custom configuration here
     '';
   };
@@ -116,5 +123,6 @@
     slurp
     jq
     grimblast
+    jetbrains-mono # Add JetBrains Mono font
   ];
 }
