@@ -128,10 +128,27 @@
   programs.swaylock = {
     enable = true;
   };
+
+  services.swayidle = {
+    enable = true;
+    events = [
+      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+      { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+    ];
+    timeouts = [
+      { timeout = 300; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+      { 
+        timeout = 600; 
+        command = "swaymsg 'output * power off'";
+        resumeCommand = "swaymsg 'output * power on'";
+      }
+    ];
+  };
   
   # Add necessary packages for Sway
   home.packages = with pkgs; [
     swayidle
+    swaybg
     wl-clipboard
     mako # notification daemon
     wofi # app launcher
