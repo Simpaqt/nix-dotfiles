@@ -89,9 +89,10 @@
         "${modifier}+x" = "layout toggle split";
         "Alt+Return" = "fullscreen";
         "${modifier}+t" = "floating toggle";
+        "${modifier}+o" = "exec swaylock";
         
         # Screenshot keybindings
-  # Screenshot of selected area directly to clipboard
+        # Screenshot of selected area directly to clipboard
         "${modifier}+p" = "exec slurp | grim -g - - | wl-copy";
         
         # Full screen screenshot directly to clipboard
@@ -123,10 +124,13 @@
       seat * xcursor_theme Adwaita 24
     '';
   };
+
+  programs.swaylock = {
+    enable = true;
+  };
   
   # Add necessary packages for Sway
   home.packages = with pkgs; [
-    swaylock
     swayidle
     wl-clipboard
     mako # notification daemon
