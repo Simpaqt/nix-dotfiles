@@ -115,7 +115,7 @@
     
     extraConfig = ''
       # Set wallpaper
-      output * bg ${../../../../assets/wallpapers/forest.png} fill
+      exec swaybg -i /home/simpa/nixos/assets/wallpapers/364766455_701469245331605_3502052166864096480_n.jpg
       
       # Font for window titles (if titlebars are enabled)
       font pango:JetBrains Mono 11
@@ -129,21 +129,21 @@
     enable = true;
   };
 
-  services.swayidle = {
-    enable = true;
-    events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
-      { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
-    ];
-    timeouts = [
-      { timeout = 300; command = "${pkgs.swaylock}/bin/swaylock -f"; }
-      { 
-        timeout = 600; 
-        command = "swaymsg 'output * power off'";
-        resumeCommand = "swaymsg 'output * power on'";
-      }
-    ];
-  };
+  # services.swayidle = {
+  #   enable = true;
+  #   events = [
+  #     { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+  #     { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+  #   ];
+  #   timeouts = [
+  #     { timeout = 300; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+  #     { 
+  #       timeout = 600; 
+  #       command = "swaymsg 'output * power off'";
+  #       resumeCommand = "swaymsg 'output * power on'";
+  #     }
+  #   ];
+  # };
   
   # Add necessary packages for Sway
   home.packages = with pkgs; [
