@@ -10,13 +10,13 @@
   imports = [
     # ./modules/hyprland
     # ./modules/hyprland/hyprpanel.nix
-    # ./modules/fish
+    ./modules/fish
     # ./modules/apps
-    # ./modules/nvim
+    ./modules/nvim
     # ./modules/gaming
-    # ./modules/sway
-    # ./modules/waybar
-    # ./modules/tmux
+    ./modules/sway
+    ./modules/waybar
+    ./modules/tmux
   ];
 
   # Let Home Manager install and manage itself
@@ -39,9 +39,9 @@
     # wget
     # git
     # htop
-    # lazygit
-    # github-cli
-    # gh-dash
+    lazygit
+    github-cli
+    gh-dash
     # feh
     # jq
     # grimblast

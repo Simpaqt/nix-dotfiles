@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
     # nvf = {
     #   url = "github:notashelf/nvf";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +25,7 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nixvim, stylix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, stylix, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };

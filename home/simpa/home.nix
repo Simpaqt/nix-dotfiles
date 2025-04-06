@@ -43,17 +43,12 @@
     gh-dash
     feh
     jq
-    grimblast
-    slurp
-    swappy
     swww
     wireplumber
     libgtop
-    bluez
     # hyprpanel
     networkmanager
     dart-sass
-    wl-clipboard
     upower
     gvfs
     btop
