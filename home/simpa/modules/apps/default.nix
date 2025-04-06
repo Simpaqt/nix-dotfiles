@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     vesktop
     kdePackages.dolphin
+    godot
     spotube
     spotify
     protonup-qt
