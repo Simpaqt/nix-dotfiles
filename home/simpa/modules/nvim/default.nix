@@ -20,6 +20,7 @@
     rustup
     trunk
     go
+    python3
     nodejs
     gcc
     deno
