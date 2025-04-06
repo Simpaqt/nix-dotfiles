@@ -76,6 +76,9 @@
     enable = true;
     userName = "Simpaqt";
     userEmail = "simpaqt@yahoo.com";
+    extraConfig = {
+      diff.tool = "nvimdiff";
+    };
     # Add other git configurations here
   };
 
