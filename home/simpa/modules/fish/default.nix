@@ -6,6 +6,8 @@
     bat           # For syntax highlighting
     fzf           # For fuzzy finding
     fd            # For file finding
+    ripgrep
+    imagemagick
     openssl
     pkg-config
     eza
@@ -66,7 +68,6 @@
        alias update="nix flake update ~/nixos#nixos"
        alias cleanup="sudo nix-collect-garbage -d"
        alias rbs="sudo nixos-rebuild switch -I nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs -I nixos-config=/etc/nixos/configuration.nix"
-       alias y="yazi"
        alias spf="superfile"
 
        # fish colors
@@ -107,9 +108,14 @@
        set -U fish_pager_color_secondary_background
        set -U fish_pager_color_secondary_prefix
        set -U fish_pager_color_secondary_description
-        
-
-
+       function y
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+          builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
+      end
      '';
   #
   #   interactiveShellInit = ''
@@ -145,6 +151,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
+    # shellWrapperName = "y";
   };
 }
 
