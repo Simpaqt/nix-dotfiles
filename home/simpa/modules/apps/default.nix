@@ -12,6 +12,7 @@
     protonup-qt
     google-chrome
     figma-linux
+    thunderbird
     vivaldi
   ];
 }

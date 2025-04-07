@@ -18,6 +18,8 @@
 
  home.packages = with pkgs; [
     rustup
+    delve
+    vscode-extensions.vadimcn.vscode-lldb
     trunk
     go
     python3

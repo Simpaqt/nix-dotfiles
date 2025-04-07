@@ -6,6 +6,7 @@
     bat           # For syntax highlighting
     fzf           # For fuzzy finding
     fd            # For file finding
+    neomutt
     ripgrep
     imagemagick
     openssl
