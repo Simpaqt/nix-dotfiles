@@ -16,6 +16,7 @@
     ./modules/sway
     ./modules/waybar
     ./modules/tmux
+    ./modules/gnupg
   ];
 
   # Let Home Manager install and manage itself

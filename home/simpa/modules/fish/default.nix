@@ -8,6 +8,10 @@
     fd            # For file finding
     neomutt
     ripgrep
+    mutt-wizard
+    isync
+    msmtp
+    pass
     imagemagick
     openssl
     pkg-config
