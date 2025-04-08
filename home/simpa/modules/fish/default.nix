@@ -7,6 +7,7 @@
     fzf           # For fuzzy finding
     fd            # For file finding
     neomutt
+    w3m
     ripgrep
     mutt-wizard
     isync
