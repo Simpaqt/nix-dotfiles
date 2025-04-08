@@ -15,6 +15,7 @@
     pass
     imagemagick
     openssl
+    mpv
     pkg-config
     eza
     rustlings
@@ -27,7 +28,6 @@
     p11-kit
     onefetch
     unzip
-    aerc
     epy
   ];
    
@@ -67,6 +67,7 @@
        alias str2="sudo mount /dev/sdb4 /Storage2"
        alias gmg="sudo mount /dev/nvme0n1p1 /Gaming"
        alias todo="cargo run --manifest-path ~/Coding/Rust/todo-list/Cargo.toml"
+       alias mail="neomutt"
 
        #nix alias
        alias rebuild="sudo nixos-rebuild switch --flake ~/nixos#nixos"
