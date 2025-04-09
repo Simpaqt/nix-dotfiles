@@ -69,6 +69,13 @@ vlHMqRh7
     ''
   ];
 
+security.wrappers.wshowkeys = {
+  source = "${pkgs.wshowkeys}/bin/wshowkeys";
+  owner = "root";
+  group = "root";
+  setuid = true;
+};
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";

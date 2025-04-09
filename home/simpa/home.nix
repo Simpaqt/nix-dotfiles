@@ -30,7 +30,9 @@
 
   programs.obs-studio = {
     enable = true;
-    # Add any additional configuration options here
+    plugins = with pkgs.obs-studio-plugins; [
+      input-overlay
+    ];
   };
   # Packages to install for your user
   home.packages = with pkgs; [

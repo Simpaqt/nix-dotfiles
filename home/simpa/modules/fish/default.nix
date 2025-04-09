@@ -10,6 +10,7 @@
     w3m
     ripgrep
     mutt-wizard
+    twitch-tui
     isync
     msmtp
     pass
