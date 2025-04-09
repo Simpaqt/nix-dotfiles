@@ -20,6 +20,8 @@
     rustup
     delve
     vscode-extensions.vadimcn.vscode-lldb
+    lua-language-server
+    stylua
     trunk
     go
     python3
