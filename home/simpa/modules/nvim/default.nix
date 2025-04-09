@@ -22,6 +22,8 @@
     vscode-extensions.vadimcn.vscode-lldb
     lua-language-server
     stylua
+    zig
+    zls
     trunk
     go
     python3
