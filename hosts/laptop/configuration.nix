@@ -120,7 +120,6 @@
     };
   };
 
-  programs.home-manager.enable = true;
   programs.fish.enable = true;
   environment.shells = with pkgs; [ fish bash ];
 
@@ -128,10 +127,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
+  environment.systemPackages = with pkgs; [
+    home-manager
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
