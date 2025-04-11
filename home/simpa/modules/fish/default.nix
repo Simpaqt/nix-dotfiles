@@ -11,6 +11,7 @@
     ripgrep
     mutt-wizard
     twitch-tui
+    nom
     isync
     msmtp
     pass

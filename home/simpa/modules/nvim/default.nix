@@ -2,6 +2,12 @@
 { config, pkgs, lib, ... }:
 
 {
+  
+  home.file.".config/nvim" = {
+    source = ../../../../../.config/nvim;
+    recursive = true;
+  };
+
   stylix.targets.neovim.enable = false;
   programs.neovim = {
     enable = true;
