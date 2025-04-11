@@ -62,8 +62,8 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm = {
-    enable = true;
-    wayland = true; # Make sure Wayland is enabled in GDM
+  enable = true;
+  wayland = true; # Make sure Wayland is enabled in GDM
   };
   services.xserver.desktopManager.gnome.enable = true;
   
@@ -120,6 +120,7 @@
     };
   };
 
+  programs.home-manager.enable = true;
   programs.fish.enable = true;
   environment.shells = with pkgs; [ fish bash ];
 
