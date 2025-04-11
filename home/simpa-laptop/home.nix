@@ -5,7 +5,6 @@
 
   # Home Manager needs a bit of information about you and the paths it should manage
   home.username = "simpa-laptop";
-  home.homeDirectory = "/home/simpa-laptop";
 
   imports = [
     # ./modules/hyprland
