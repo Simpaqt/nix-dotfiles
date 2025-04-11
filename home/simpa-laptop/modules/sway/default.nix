@@ -115,7 +115,7 @@
     
     extraConfig = ''
       # Set wallpaper
-      exec swaybg -i /home/simpa-laptop/nixos/assets/wallpapers/364766455_701469245331605_3502052166864096480_n.jpg
+      exec swaybg -i /home/simpa/nixos/assets/wallpapers/364766455_701469245331605_3502052166864096480_n.jpg
       
       # Font for window titles (if titlebars are enabled)
       font pango:JetBrains Mono 11
