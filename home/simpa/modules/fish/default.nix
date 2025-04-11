@@ -72,12 +72,11 @@
        alias mail="neomutt"
 
        #nix alias
-       alias rebuild="sudo nixos-rebuild switch --flake ~/nixos#nixos"
+       alias rb="sudo nixos-rebuild switch --flake ~/nixos#nixos"
+       alias rbl="sudo nixos-rebuild switch --flake ~/nixos#laptop"
        alias hms="home-manager switch"
-       alias update="nix flake update ~/nixos#nixos"
+       alias update="sudo nix flake update ~/nixos"
        alias cleanup="sudo nix-collect-garbage -d"
-       alias rbs="sudo nixos-rebuild switch -I nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs -I nixos-config=/etc/nixos/configuration.nix"
-       alias spf="superfile"
 
        # fish colors
        set -U fish_color_normal f8f8f2
