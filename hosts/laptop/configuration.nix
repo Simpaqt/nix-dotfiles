@@ -38,9 +38,33 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  security.polkit.enable = true;
+
+  programs.sway = {
+  enable = true;
+  wrapperFeatures = {
+    gtk = true; # So that GTK applications run with proper themes
+    base = true; # Needed for GDM to find the session
+  };
+  extraPackages = with pkgs; [
+    swayidle
+    swaylock
+    xwayland # For X11 application support
+  ];
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = true; # Make sure Wayland is enabled in GDM
+  };
   services.xserver.desktopManager.gnome.enable = true;
   
 
