@@ -73,6 +73,9 @@
    # ];
   };
 
+  programs.fish.enable = true;
+  environment.shells = with pkgs; [ fish bash ];
+
   # programs.firefox.enable = true;
 
   # List packages installed in system profile. To search, run:
