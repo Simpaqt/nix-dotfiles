@@ -55,7 +55,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = { inherit inputs; };
-            users.simpa = import ./home/simpa-laptop/home.nix;
+            users.simpa-laptop = import ./home/simpa-laptop/home.nix;
           };
         }
       ];
