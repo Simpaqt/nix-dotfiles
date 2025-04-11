@@ -22,6 +22,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Oslo";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
