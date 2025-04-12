@@ -26,9 +26,11 @@
     zls
     trunk
     go
+    clang
+    clang-tools
     python3
     nodejs
-    gcc
+    # gcc
     deno
  ];
 } 
