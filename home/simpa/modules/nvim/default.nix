@@ -1,13 +1,19 @@
 # home/simpa/modules/nvim/nixvim.nix
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+  ];
+
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
     
+    config = {
+      colorschemes.tokyonight.enable = true;
+    };
     # Theme settings
-    colorschemes.tokyonight.enable = true;
     
     # Global options
     globals = {
