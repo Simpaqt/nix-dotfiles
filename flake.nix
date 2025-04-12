@@ -35,7 +35,10 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = { inherit inputs; };
-            users.simpa = import ./home/simpa/home.nix;
+            users.simpa = { config, pkgs, ... }: {
+	      nixvim.homeManagerModules.nixvim
+	      ./home/simpa/home.nix
+	    };
           };
         }
       ];
