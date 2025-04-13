@@ -41,6 +41,7 @@
 
   security.polkit.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
   programs.sway = {
   enable = true;
   wrapperFeatures = {

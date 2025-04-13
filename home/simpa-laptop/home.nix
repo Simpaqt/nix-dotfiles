@@ -21,6 +21,7 @@
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
   programs.fish.enable = true;
+  programs.vivaldi.enable = true;
   stylix.targets.ghostty.enable = false;
   programs.ghostty = {
     enable = true;
