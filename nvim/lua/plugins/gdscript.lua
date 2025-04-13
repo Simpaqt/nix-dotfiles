@@ -10,7 +10,6 @@ return {
       end
     end,
   },
-  
   -- Add gdscript LSP configuration
   {
     "neovim/nvim-lspconfig",
@@ -23,7 +22,6 @@ return {
       },
     },
   },
-  
   -- Add filetype detection for Godot
   {
     "LazyVim/LazyVim",
