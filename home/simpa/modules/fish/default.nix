@@ -74,7 +74,7 @@
        #nix alias
        alias rebuild="sudo nixos-rebuild switch --flake ~/nixos#nixos"
        alias hms="home-manager switch"
-       alias update="sudo nix flake update ~/nixos"
+       alias update="sudo nix flake update --flake ~/nixos"
        alias cleanup="sudo nix-collect-garbage -d"
 
        # fish colors
