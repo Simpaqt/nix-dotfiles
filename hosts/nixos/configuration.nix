@@ -179,11 +179,22 @@ security.wrappers.wshowkeys = {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enable = true;
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   #wget
+    dive
+    podman-tui
+    podman-compose
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

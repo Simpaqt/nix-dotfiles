@@ -23,6 +23,7 @@
     lua-language-server
     stylua
     zig
+    marksman
     zls
     trunk
     go
