@@ -52,6 +52,7 @@
        abbr .3 'cd ../../..'
        abbr .4 'cd ../../../..'
        abbr .5 'cd ../../../../..'
+       abbr nix-shell 'nix-shell --command fish'
 
        #aliases
        alias vi="nvim"
