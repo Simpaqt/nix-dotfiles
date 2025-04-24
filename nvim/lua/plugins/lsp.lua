@@ -10,6 +10,13 @@ return {
           -- Use the Nix-provided binary
           cmd = { "/etc/profiles/per-user/simpa/bin/lua-language-server" },
         },
+        -- Add Marksman configuration here
+        marksman = {
+          -- Prevent Mason from managing this server
+          mason = false,
+          -- Use the Nix-provided binary
+          cmd = { "/etc/profiles/per-user/simpa/bin/marksman", "server" },
+        },
         -- Remove any reference to "stylua" here if it exists
       },
     },
@@ -21,7 +28,9 @@ return {
       opts.automatic_installation = opts.automatic_installation or {}
       opts.automatic_installation.exclude = opts.automatic_installation.exclude or {}
       table.insert(opts.automatic_installation.exclude, "lua_ls")
-      
+      -- Exclude marksman from automatic installation
+      table.insert(opts.automatic_installation.exclude, "marksman")
+
       -- Make sure stylua is not in the list of LSP servers
       if opts.ensure_installed then
         for i, server in ipairs(opts.ensure_installed) do

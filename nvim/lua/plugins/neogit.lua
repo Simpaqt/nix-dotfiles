@@ -7,14 +7,14 @@ return {
   },
   keys = {
     {
-      "<leader>ng",
+      "<leader>gg",
       function()
         require("neogit").open()
       end,
       desc = "Open Neogit",
     },
     {
-      "<leader>ns",
+      "<leader>gs",
       function()
         require("neogit").open({ kind = "split" })
       end,
