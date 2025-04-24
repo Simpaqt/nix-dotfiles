@@ -5,28 +5,30 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "hrsh7th/cmp-cmdline",  -- Add this if it's not already installed
+      "hrsh7th/cmp-cmdline",  -- For command-line completion
+      "hrsh7th/cmp-buffer",   -- For buffer content completion in search
+      "hrsh7th/cmp-path",     -- For path completion in command mode
     },
-    opts = function(_, opts)
-      -- Original nvim-cmp config is preserved
-
-      -- Add cmdline completion for / and :
+    config = function(_, _)
       local cmp = require("cmp")
       
-      -- Command line setup for / search
+      -- Keep the original configuration for insert mode
+      -- The error is happening because we're not properly preserving the original setup
+      
+      -- Set up cmdline completion for / (search)
       cmp.setup.cmdline('/', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
-          { name = 'buffer', keyword_length = 1 }
+          { name = 'buffer' }
         },
         window = {
           completion = cmp.config.window.bordered({
             winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
           }),
-        },
+        }
       })
       
-      -- Command line setup for : commands
+      -- Set up cmdline completion for : (commands)
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources(
@@ -37,16 +39,13 @@ return {
           completion = cmp.config.window.bordered({
             winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
           }),
-        },
+        }
       })
-      
-      return opts
     end,
   },
   
-  -- Make sure cmp-cmdline is installed
-  {
-    "hrsh7th/cmp-cmdline",
-    lazy = false,  -- Critical: this needs to be loaded early
-  }
+  -- Make sure the required completion sources are installed
+  { "hrsh7th/cmp-cmdline" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
 }
