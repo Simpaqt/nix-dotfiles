@@ -1,3 +1,8 @@
-tags
-.luarc.json
-/result
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
