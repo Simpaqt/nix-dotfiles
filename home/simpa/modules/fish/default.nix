@@ -19,6 +19,7 @@
     openssl
     mpv
     pkg-config
+    gnumake
     eza
     rustlings
     yt-dlp
@@ -71,6 +72,7 @@
        alias gmg="sudo mount /dev/nvme0n1p1 /Gaming"
        alias todo="cargo run --manifest-path ~/Coding/Rust/todo-list/Cargo.toml"
        alias mail="neomutt"
+       alias nvim2="NVIM_APPNAME=nvim_2 nvim"
 
        #nix alias
        alias rebuild="sudo nixos-rebuild switch --flake ~/nixos#nixos"
