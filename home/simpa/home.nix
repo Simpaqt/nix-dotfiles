@@ -17,7 +17,6 @@
     ./modules/waybar
     ./modules/tmux
     ./modules/gnupg
-    ./modules/helix
   ];
 
   # Let Home Manager install and manage itself
